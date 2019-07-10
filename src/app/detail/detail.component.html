@@ -1,0 +1,23 @@
+ <body>
+   <div class="row">
+
+     <div *ngFor="let per of person" class="info ">
+
+
+       <h1>{{ per.firstName }}'s Details</h1>
+
+       <h4> ID: {{per.id }}</h4>
+       <h4> Name: {{ per.firstName }}</h4>
+       <h4> Lastname: {{ per.lastName }}</h4>
+       <h4> Street: {{ per.street }}</h4>
+       <h4> City: {{ per.city }}</h4>
+       <h4> State: {{ per.state }}</h4>
+       <h4> Zip: {{ per.zip }}</h4>
+       <h4> Product: {{ per.name }}</h4>
+
+       <button id="edit" class="btn btn-primary">Edit</button>
+
+     </div>
+
+   </div>
+ </body>

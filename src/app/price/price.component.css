@@ -1,0 +1,140 @@
+h1 {
+  font-size: 5rem;
+}
+
+h3 {
+  font-size: 3rem;
+}
+
+p {
+  font-size: 1.5rem;
+}
+body{
+  background-color: #e3f2fd;
+  padding-bottom: 2%;
+}
+
+#hotelTitle {
+  padding: 0;
+}
+
+.head {
+  text-align: center;
+}
+
+.row {
+  text-align: center;
+  padding: 1% 25%;
+
+}
+
+.title {
+  padding: 0;
+}
+
+.pricing {
+  text-align: center;
+}
+
+.btn {
+  width: 150px;
+}
+img{
+  width: 300px;
+  height: 250px;
+}
+
+.form{
+  padding-left: 25%;
+  padding-right: 25%;
+}
+.hidden{
+  padding: 5% 30%;
+}
+ul{
+  font-family: Arial;
+}
+.allPeople {
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;
+  width: 15em;
+}
+.allPeople li {
+  cursor: pointer;
+  position: relative;
+  left: 0;
+  background-color: #EEE;
+  margin: .5em;
+  padding: .3em 0;
+  height: 1.6em;
+  border-radius: 4px;
+  height: 40px;
+}
+.allPeople li.selected:hover {
+  background-color: #BBD8DC !important;
+  color: white;
+}
+.allPeople li:hover {
+  color: #607D8B;
+  background-color: #DDD;
+  left: .1em;
+}
+.allPeople .text {
+  position: relative;
+}
+.allPeople .badge {
+  display: inline-block;
+  font-size: small;
+  color: white;
+  padding: 0.8em 0.7em 0 0.7em;
+  background-color:#405061;
+  line-height: 1em;
+  position: relative;
+  left: -1px;
+  top: -4px;
+  height: 40px;
+  margin-right: .8em;
+  border-radius: 4px 0 0 4px;
+}
+button{
+  font-family: Arial;
+  background-color: #8e8e8e;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  cursor: hand;
+}
+button.delete {
+  position: relative;
+  left: 12em;
+  top: -45px;
+  background-color: gray !important;
+  color: white;
+  display: inherit;
+  padding: 7px;
+  width: 2em;
+}
+
+#logo{
+  position: relative;
+  width: 100px;
+  height: 100px;
+  left: 800px;
+  margin: 5%;
+
+}
+.btn-success{
+  position: relative;
+  left: 2%;
+}
+.card-body{
+  border-top-style:solid;
+}
+.card-text-center{
+    border-top-style:solid;
+}
+.row{
+  margin-left: 0;
+  margin-right: 0;
+}

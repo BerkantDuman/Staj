@@ -1,0 +1,45 @@
+.info {
+  position: relative;
+  padding: 5%;
+  margin-left: 30%;
+  margin-right: 10%;
+  padding-bottom: 13%;
+  left: 8% ;
+}
+body{
+  background-color: #e3f2fd;
+}
+
+button {
+  font-family: Arial;
+  background-color: #8e8e8e;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  cursor: hand;
+  margin-top: 2%;
+  width: 100px;
+  width: 200px;
+}
+
+
+.btn-success{
+  position: relative;
+  left: 2%;
+}
+.btn{
+  position: relative;
+  left: 15em;
+  top: -91px;
+  display: inherit;
+  padding: 7px;
+}
+#edit{
+  margin-top: 50%;
+  margin-left: -100%;
+}
+.row{
+  margin-left: 0;
+  margin-right: 0;
+  padding-top: 1%;
+}
