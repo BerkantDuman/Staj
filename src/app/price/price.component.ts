@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Validators } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { People } from '../people';
 import { PeopleService } from '../people.service';
+import { Products } from '../products';
 
 @Component({
   selector: 'app-price',
@@ -13,12 +14,14 @@ import { PeopleService } from '../people.service';
 export class PriceComponent implements OnInit {
   allPeople: People[];
   product_id: number;
+  allProducts: Products[];
 
   constructor(
     private peopleService: PeopleService,
   ) { }
 
   ngOnInit() {
+    this.getAllProducts();
   }
 
   addPerson(firstName: string, lastName: string, street: string, city: string, state: string, zip: string, product_id = this.product_id) {
@@ -30,9 +33,14 @@ export class PriceComponent implements OnInit {
 
   }
 
+  getAllProducts(){
+    this.peopleService.getAllProducts()
+    .subscribe(allProducts => this.allProducts = allProducts);
+  }
+
   submitted = false;
-  selectedProduct(id: number) {
-    this.product_id = id;
+  selectedProduct(product: Products) {
+    this.product_id = product.id;
     this.submitted = true;
   }
   show() {

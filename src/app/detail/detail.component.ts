@@ -26,7 +26,6 @@ export class DetailComponent implements OnInit {
 
   ngOnInit() {
     this.getPersonWithProduct();
-    this.getAllPeople();
   }
 
   getPersonWithProduct(): void {
@@ -35,18 +34,21 @@ export class DetailComponent implements OnInit {
       .subscribe(person => this.person = person);
   }
 
-  getAllPeople() {
-    this.peopleService.getAllPeople()
-      .subscribe(allPeople => this.allPeople = allPeople);
-  }
 
 
-/*  update(firstName: string, lastName: string, street: string, city: string, state: string, zip: string): void {
+  update(firstName: string, lastName: string, street: string, city: string, state: string, zip: string): void {
     const newPerson: People = { firstName, lastName, street, state, city, zip } as People;
     const id = +this.route.snapshot.paramMap.get('id');
     this.peopleService.updatePerson(newPerson, id)
       .subscribe();
-  }*/
+  }
 
+  submitted = false;
 
+  hide() {
+    this.submitted = true;
+  }
+  show() {
+    this.submitted = false;
+  }
 }

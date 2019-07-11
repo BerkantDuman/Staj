@@ -19,40 +19,21 @@
 
     <section class="pricing">
       <div class="row">
-        <div class="col-6 col-md-4">
-          <div class="card-text-center" style="width: 18rem;">
-            <img src="assets/images/laptop.png" class="card-img-top" alt="...">
-            <div class="card-body">
-              <p class="card-text">DELL 15-DB0023NT AMD RYZEN 3 2200U 2.5GHZ-4GB-1TB HDD-15.6"-AMD-W10 NOTEBOOK</p>
-              <h3>589$</h3>
-              <button class="btn btn-primary" type="button" name="button" (click)="selectedProduct(1)"> Buy </button>
-            </div>
-          </div>
-        </div>
 
-        <div class="col-6 col-md-4">
+        <div class="col-6 col-md-4" *ngFor ="let product of allProducts">
           <div class="card-text-center" style="width: 18rem;">
-            <img src="assets/images/laptop2.jpeg" class="card-img-top" alt="...">
+            <img src="assets/images/laptop{{product.id}}.jpeg" class="card-img-top" alt="...">
             <div class="card-body">
-              <p class="card-text">ASUS S430FN CORE İ7 8565U 1.8GHZ-8GB RAM-256GB SSD-14"-MX150 2GB-W10 - NOTEBOOK</p>
-              <h3>309$</h3>
-              <button class="btn btn-primary" type="button" name="button" (click)="selectedProduct(2)"> Buy </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-6 col-md-4">
-          <div class="card-text-center" style="width: 18rem;">
-            <img src="assets/images/laptop3.jpeg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <p class="card-text">HP X540LA CORE İ3 5005U 2.0GHZ-4GB RAM-500GB HDD-15.6"W10 NOTEBOOK</p>
-              <h3>829$</h3>
-              <button class="btn btn-primary" type="button" name="button" (click)="selectedProduct(3)"> Buy </button>
+              <h3>{{ product.name }}</h3>
+              <p class="card-text">{{ product.informations }}</p>
+              <h3>{{ product.prices }}$</h3>
+              <button class="btn btn-primary" type="button" name="button" (click)="selectedProduct(product)"> Buy </button>
             </div>
           </div>
         </div>
 
       </div>
+
     </section>
 
     <section class="info">
@@ -63,10 +44,7 @@
             <ul class="list-unstyled text-small">
               <li><a class="text-muted" href="#">Cool stuff</a></li>
               <li><a class="text-muted" href="#">Random feature</a></li>
-              <li><a class="text-muted" href="#">Team feature</a></li>
-              <li><a class="text-muted" href="#">Stuff for developers</a></li>
-              <li><a class="text-muted" href="#">Another one</a></li>
-              <li><a class="text-muted" href="#">Last time</a></li>
+
             </ul>
           </div>
           <div class="col-6 col-md-4">
@@ -74,8 +52,7 @@
             <ul class="list-unstyled text-small">
               <li><a class="text-muted" href="#">Resource</a></li>
               <li><a class="text-muted" href="#">Resource name</a></li>
-              <li><a class="text-muted" href="#">Another resource</a></li>
-              <li><a class="text-muted" href="#">Final resource</a></li>
+
             </ul>
           </div>
           <div class="col-6 col-md-4">
@@ -83,8 +60,6 @@
             <ul class="list-unstyled text-small">
               <li><a class="text-muted" href="#">Team</a></li>
               <li><a class="text-muted" href="#">Locations</a></li>
-              <li><a class="text-muted" href="#">Privacy</a></li>
-              <li><a class="text-muted" href="#">Terms</a></li>
             </ul>
           </div>
         </div>
@@ -136,7 +111,7 @@
 
         </div>
 
-       
+
 
       </div>
 

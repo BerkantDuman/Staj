@@ -36,10 +36,22 @@ conn.connect((err) => {
 
 
 
+
 //GET PERSON WITH PRODUCT
 app.get('/products/:id', function(request, response) {
-  let sql = "SELECT * FROM  products INNER JOIN people ON people.product_id = products.id WHERE people.id = ?" ;
+  let sql = "SELECT * FROM  products INNER JOIN people ON people.product_id = products.id WHERE people.id = ?";
   conn.query(sql, [request.params.id], (error, rows, fields) => {
+    if (!error) {
+      response.send(rows);
+    } else {
+      console.log(error);
+    }
+  });
+});
+
+app.get('/products', function(request, response) {
+
+  conn.query("SELECT *FROM products", (error, rows, fields) => {
     if (!error) {
       response.send(rows);
     } else {
@@ -100,17 +112,20 @@ app.post('/people', function(request, response) {
 });
 
 //UPDATE
-/*app.put('/people/:id',(req, res) => {
+app.put('/people/:id', (request, response) => {
   let emp = request.body;
-  let sql = "UPDATE product SET firstName ='"+emp.firstName+"', lastName='"+emp.lastName+"', street='"+emp.street+"', city='"+emp.city+"', state='"+emp.state+"', zip='"+emp.zip+"' WHERE id="+req.params.id;
-  conn.query(sql, (error, fields) => {
+  let id = request.params.id;
+  var value = [emp.firstName, emp.lastName, emp.street, emp.state, emp.city, emp.zip, id];
+  let sql = 'UPDATE people SET firstName=?, lastName=?, street=?, city=?, state=?, zip=?  WHERE id=?';
+
+  conn.query(sql, value, (error, fields) => {
     if (!error) {
       response.send("Updated new person");
     } else {
       console.log(error);
     }
   });
-});*/
+});
 
 
 app.listen(5000, function() {
