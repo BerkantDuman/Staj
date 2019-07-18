@@ -1,0 +1,23 @@
+h1 {
+  font-size: 3rem;
+  font-family: 'Inconsolata' monospace;
+}
+
+h3 {
+  font-size: 2rem;
+  font-family: 'Inconsolata' monospace;
+}
+
+p {
+  font-size: 1.5rem;
+}
+a{
+  color: black;
+}
+#logo{
+  width: 50px;
+  height: 50px;
+}
+.navbar{
+  background-color: #40c4ff;
+}

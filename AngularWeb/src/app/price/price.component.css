@@ -1,0 +1,71 @@
+h1 {
+  font-size: 5rem;
+  font-family: 'Inconsolata', monospace;
+}
+
+h3 {
+  font-size: 3rem;
+  font-family: 'Inconsolata', monospace;
+}
+
+p {
+  font-size: 1.5rem;
+
+}
+body{
+  background-color: #e3f2fd;
+  padding-bottom: 2%;
+  text-align: center;
+
+}
+
+.row {
+  text-align: center;
+  padding: 1% 25%;
+  margin-left: 0;
+  margin-right: 0;
+
+}
+
+.title {
+  padding: 0;
+}
+
+.pricing {
+  text-align: center;
+}
+
+.btn {
+  width: 150px;
+}
+img{
+  width: 300px;
+  height: 250px;
+}
+
+.form{
+  padding-left: 25%;
+  padding-right: 25%;
+}
+
+
+button{
+  font-family: Arial;
+  background-color: #8e8e8e;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  cursor: hand;
+}
+
+
+#logo{
+  width: 100px;
+  height: 100px;
+  margin-top: 5%;
+
+}
+.btn-success{
+  position: relative;
+  left: 2%;
+}
