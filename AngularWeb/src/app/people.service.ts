@@ -54,20 +54,20 @@ export class PeopleService {
   }
 
 
-  updatePerson(person: People , id: number): Observable<any> {
+  updatePerson(person: People, id: number): Observable<any> {
     const url = `${this.allPeopleUrl}/${id}`;
-    return this.http.put(url, person, httpOptions);
+    return this.http.put<People>(url, person, httpOptions);
 
   }
 
   //FOR PRODUCTS
-  getPersonWithProduct(id: number){
+  getPersonWithProduct(id: number) {
     const url = `${this.allProductsUrl}/${id}`;
     return this.http.get<People[]>(url);
 
 
   }
-  getAllProducts(){
+  getAllProducts() {
     return this.http.get<Products[]>(this.allProductsUrl);
 
   }

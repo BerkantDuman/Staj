@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PeoplelistComponent } from './peoplelist.component';
+import { NavbarComponent } from '../navbar/navbar.component';
+import { RouterModule, RouterEvent } from '@angular/router';
 
 describe('PeoplelistComponent', () => {
   let component: PeoplelistComponent;
@@ -8,9 +10,13 @@ describe('PeoplelistComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PeoplelistComponent ]
+      declarations: [
+        PeoplelistComponent,
+        NavbarComponent,
+        RouterModule,
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +25,4 @@ describe('PeoplelistComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
 });

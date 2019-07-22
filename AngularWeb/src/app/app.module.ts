@@ -4,6 +4,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { PeopleService } from './people.service';
+import { RouterModule } from '@angular/router';
+
 
 
 import { AppComponent } from './app.component';
@@ -15,8 +17,16 @@ import { PeoplelistComponent } from './peoplelist/peoplelist.component';
 
 
 
+
 @NgModule({
   declarations: [
+    AppComponent,
+    PriceComponent,
+    NavbarComponent,
+    DetailComponent,
+    PeoplelistComponent,
+  ],
+  exports: [
     AppComponent,
     PriceComponent,
     NavbarComponent,
@@ -29,6 +39,7 @@ import { PeoplelistComponent } from './peoplelist/peoplelist.component';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
+    RouterModule
   ],
   providers: [PeopleService],
   bootstrap: [AppComponent]

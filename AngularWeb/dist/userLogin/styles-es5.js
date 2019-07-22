@@ -557,7 +557,7 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/berkant/ders/staj/userLogin/src/styles.css */"./src/styles.css");
+module.exports = __webpack_require__(/*! /home/berkant/ders/Staj/AngularWeb/src/styles.css */"./src/styles.css");
 
 
 /***/ })
