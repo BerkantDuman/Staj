@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/berkant/Desktop/deneme/newProject/android/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-watch-v20/values-watch-v20.xml",
+            "map": [
+                {
+                    "source": "/home/berkant/.gradle/caches/transforms-2/files-2.1/abb695fe7b8f2c4ffe1b88a9a48fd845/res/values-watch-v20/values-watch-v20.xml",
+                    "from": {
+                        "startLines": "2,5,8",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,214,385",
+                        "endLines": "4,7,10",
+                        "endColumns": "12,12,12",
+                        "endOffsets": "209,380,553"
+                    }
+                }
+            ]
+        }
+    ]
+}
