@@ -44,9 +44,6 @@ export class DetailComponent implements OnInit {
   submitted = false;
 
   hide() {
-    this.submitted = true;
-  }
-  show() {
-    this.submitted = false;
+    this.submitted = !this.submitted;
   }
 }

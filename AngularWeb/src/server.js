@@ -102,9 +102,9 @@ app.post('/people', function(request, response) {
   var value = [
     [emp.firstName, emp.lastName, emp.street, emp.state, emp.city, emp.zip, emp.product_id]
   ]
-  conn.query(sql, [value], (error, fields) => {
+  conn.query(sql, [value], (error,rows, fields) => {
     if (!error) {
-      response.send("Added new person");
+      response.send(rows);
     } else {
       console.log(error);
     }
@@ -118,9 +118,9 @@ app.put('/people/:id', (request, response) => {
   var value = [emp.firstName, emp.lastName, emp.street, emp.state, emp.city, emp.zip, id];
   let sql = 'UPDATE people SET firstName=?, lastName=?, street=?, city=?, state=?, zip=?  WHERE id=?';
 
-  conn.query(sql, value, (error, fields) => {
+  conn.query(sql, value, (error,rows, fields) => {
     if (!error) {
-      response.send("Updated new person");
+      response.send(rows);
     } else {
       console.log(error);
     }

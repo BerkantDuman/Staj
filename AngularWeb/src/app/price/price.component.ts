@@ -45,10 +45,10 @@ export class PriceComponent implements OnInit {
 
   selectedProduct(product: Products) {
     this.product_id = product.id;
-    this.submitted = true;
+    this.submitted = !this.submitted;
   }
   show() {
-    this.submitted = false;
+    this.submitted = !this.submitted;
   }
 
 }

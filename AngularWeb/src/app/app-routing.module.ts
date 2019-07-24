@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
 import { PriceComponent } from './price/price.component';
@@ -12,7 +11,11 @@ const routes: Routes = [
   { path: 'list', component: PeoplelistComponent },
 ];
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(
+    routes, {enableTracing: true}
+    )
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule { }

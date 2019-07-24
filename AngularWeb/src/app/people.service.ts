@@ -19,7 +19,7 @@ const httpOptions = {
 export class PeopleService {
 
 
-  private allPeopleUrl = 'http://localhost:5000/people';
+  public allPeopleUrl = 'http://localhost:5000/people';
   private allProductsUrl = 'http://localhost:5000/products';
 
 
