@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, ActivatedRoute } from '@angular/router';
 
 import { PriceComponent } from './price/price.component';
 import { DetailComponent } from './detail/detail.component';
 import { PeoplelistComponent } from './peoplelist/peoplelist.component';
+
 
 const routes: Routes = [
   { path: '', component: PriceComponent },
@@ -13,7 +14,7 @@ const routes: Routes = [
 @NgModule({
   imports: [
     RouterModule.forRoot(
-    routes, {enableTracing: true}
+    routes
     )
   ],
   exports: [RouterModule],

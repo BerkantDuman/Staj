@@ -131,5 +131,3 @@ app.put('/people/:id', (request, response) => {
 app.listen(5000, function() {
   console.log('Example app listening on port 4000');
 });
-
-module.exports = app;

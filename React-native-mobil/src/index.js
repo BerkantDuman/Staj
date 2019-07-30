@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, Text, ScrollView, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
 import People from './screens/people';
 import Products from './screens/products';
 import Register from './screens/register';

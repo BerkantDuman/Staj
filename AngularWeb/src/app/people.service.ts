@@ -23,12 +23,7 @@ export class PeopleService {
   private allProductsUrl = 'http://localhost:5000/products';
 
 
-  constructor(
-    private http: HttpClient,
-
-  ) {
-
-  }
+  constructor(private http: HttpClient) { }
 
 
   getAllPeople(): Observable<People[]> {
@@ -63,7 +58,7 @@ export class PeopleService {
   //FOR PRODUCTS
   getPersonWithProduct(id: number) {
     const url = `${this.allProductsUrl}/${id}`;
-    return this.http.get<People[]>(url);
+    return this.http.get<any[]>(url);
 
 
   }

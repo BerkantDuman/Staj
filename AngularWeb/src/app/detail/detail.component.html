@@ -21,7 +21,7 @@
      </div>
 
    </div>
-
+  <!-- [(Ngmodel)] = person[0].name vs kaldırıldı-->
    <div class="all" [hidden]=!submitted>
      <img id="logo" src="assets/images/online-shop.png" alt="">
      <form class="form" #personForm="ngForm">
@@ -30,37 +30,37 @@
          <h3>Informations:</h3>
          <div class="form-group">
            <label for="firstName">Name: </label>
-           <input id="name" class="form-control" [(ngModel)]="person[0].firstName" type="text" name="firstName" placeholder="Name" #firstName #spy required>
+           <input id="name" class="form-control"  type="text" name="firstName" placeholder="Name" #firstName #spy required>
 
          </div>
          <div class="form-group">
            <label for="lastName">Last Name: </label>
-           <input id="lastname" class="form-control" [(ngModel)]="person[0].lastName" type="text" name="lastName" placeholder="Lastname" #lastName>
+           <input id="lastname" class="form-control"  type="text" name="lastName" placeholder="Lastname" #lastName>
 
          </div>
          <h3>Address:</h3>
 
          <div class="form-group">
            <label> Street: </label>
-           <input id="street" class="form-control" [(ngModel)]="person[0].street" type="text" name="street" placeholder="Street" #street>
+           <input id="street" class="form-control"  type="text" name="street" placeholder="Street" #street>
 
          </div>
 
          <div class="form-group">
            <label>City:</label>
-           <input id="city" class="form-control" [(ngModel)]="person[0].city" type="text" name="city" placeholder="City" #city>
+           <input id="city" class="form-control"  type="text" name="city" placeholder="City" #city>
 
          </div>
          <div class="form-group">
            <label>State:</label>
 
-           <input id="state" class="form-control" [(ngModel)]="person[0].state" type="text" name="state" placeholder="State" #state>
+           <input id="state" class="form-control"  type="text" name="state" placeholder="State" #state>
 
          </div>
          <div class="form-group">
 
            <label>Zip Code:</label>
-           <input id="zip" class="form-control" [(ngModel)]="person[0].zip" type="text" name="zip" placeholder="Zip" #zip>
+           <input id="zip" class="form-control"  type="text" name="zip" placeholder="Zip" #zip>
 
          </div>
 

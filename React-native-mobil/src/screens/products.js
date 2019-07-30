@@ -23,16 +23,17 @@ class Products extends React.Component {
     showToastMassage() {
         ToastAndroid.show('Your product added to cart!', ToastAndroid.SHORT);
     }
-    onPressed(navigate) {
+    onPressed() {
         var RandomNumber = Math.floor(Math.random() * 3) + 1 ;
  
         this.showToastMassage();
-        navigate('Register', {
+        this.props.navigation.navigate('Register', {
             product: RandomNumber
         });
     }
     render() {
-        const { navigate } = this.props.navigation;
+        //const navigate olarak tanımlayınca uygulama çalışmıyor fakat test başarılı oluyor.
+        //const { navigate }  = this.props.navigation;
 
         return (
             <View style={styles.container}>
@@ -57,7 +58,7 @@ class Products extends React.Component {
                     <View style={styles.buttonStyle}>
                         <Button
                             title="Buy"
-                            onPress={() => this.onPressed(navigate)}
+                            onPress={() => this.onPressed()}
                         />
                     </View>
 
@@ -76,7 +77,7 @@ class Products extends React.Component {
                     <View style={styles.buttonStyle}>
                         <Button
                             title="Buy"
-                            onPress={() => this.onPressed(navigate)}
+                            onPress={() => this.onPressed()}
                         />
                     </View>
                     <View >
@@ -96,7 +97,7 @@ class Products extends React.Component {
                     <View style={styles.buttonStyle}>
                         <Button
                             title="Buy"
-                            onPress={() => this.onPressed(navigate)}
+                            onPress={() => this.onPressed()}
                         />
                     </View>
                 </ScrollView>

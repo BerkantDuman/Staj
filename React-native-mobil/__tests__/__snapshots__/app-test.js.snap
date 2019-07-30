@@ -1,0 +1,861 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Details correctly 1`] = `
+<RCTScrollView
+  style={
+    Object {
+      "backgroundColor": "pink",
+    }
+  }
+>
+  <View>
+    <TextInput
+      allowFontScaling={true}
+      onChangeText={[Function]}
+      placeholder="Firstname"
+      rejectResponderTermination={true}
+      style={
+        Object {
+          "backgroundColor": "white",
+          "borderRadius": 8,
+          "color": "black",
+          "marginHorizontal": 10,
+          "marginVertical": 15,
+        }
+      }
+      underlineColorAndroid="transparent"
+      value={null}
+    />
+    <TextInput
+      allowFontScaling={true}
+      onChangeText={[Function]}
+      placeholder="Lastname"
+      rejectResponderTermination={true}
+      style={
+        Object {
+          "backgroundColor": "white",
+          "borderRadius": 8,
+          "color": "black",
+          "marginHorizontal": 10,
+          "marginVertical": 15,
+        }
+      }
+      underlineColorAndroid="transparent"
+      value={null}
+    />
+    <TextInput
+      allowFontScaling={true}
+      onChangeText={[Function]}
+      placeholder="Address"
+      rejectResponderTermination={true}
+      style={
+        Object {
+          "backgroundColor": "white",
+          "borderRadius": 8,
+          "color": "black",
+          "marginHorizontal": 10,
+          "marginVertical": 15,
+        }
+      }
+      underlineColorAndroid="transparent"
+      value={null}
+    />
+    <View
+      style={
+        Object {
+          "borderRadius": 8,
+          "marginHorizontal": 10,
+          "marginVertical": 15,
+        }
+      }
+    >
+      <View
+        accessibilityRole="button"
+        accessibilityStates={Array []}
+        accessible={true}
+        clickable={true}
+        isTVSelectable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {},
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#007AFF",
+                  "fontSize": 18,
+                  "padding": 8,
+                  "textAlign": "center",
+                },
+              ]
+            }
+          >
+            Update
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
+`;
+
+exports[`renders People correctly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "pink",
+      "height": "100%",
+      "justifyContent": "center",
+    }
+  }
+>
+  <RCTScrollView>
+    <View>
+      <Text
+        style={
+          Object {
+            "color": "#424242",
+            "fontSize": 24,
+            "marginLeft": 10,
+            "marginTop": 15,
+          }
+        }
+      >
+        Search by ID:
+      </Text>
+      <TextInput
+        allowFontScaling={true}
+        onChangeText={[Function]}
+        placeholder="Find person with ID"
+        rejectResponderTermination={true}
+        style={
+          Object {
+            "backgroundColor": "white",
+            "borderRadius": 8,
+            "color": "black",
+            "marginHorizontal": 10,
+            "marginVertical": 15,
+          }
+        }
+        underlineColorAndroid="transparent"
+        value={null}
+      />
+      <View
+        style={
+          Object {
+            "borderRadius": 8,
+            "marginHorizontal": 10,
+            "marginVertical": 15,
+          }
+        }
+      >
+        <View
+          accessibilityRole="button"
+          accessibilityStates={Array []}
+          accessible={true}
+          clickable={true}
+          isTVSelectable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {},
+              ]
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#007AFF",
+                    "fontSize": 18,
+                    "padding": 8,
+                    "textAlign": "center",
+                  },
+                ]
+              }
+            >
+              Search
+            </Text>
+          </View>
+        </View>
+      </View>
+      <RCTScrollView>
+        <View />
+      </RCTScrollView>
+    </View>
+  </RCTScrollView>
+</View>
+`;
+
+exports[`renders Products correctly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "pink",
+      "justifyContent": "center",
+    }
+  }
+>
+  <RCTScrollView>
+    <View>
+      <Text
+        style={
+          Object {
+            "fontSize": 28,
+            "paddingHorizontal": 8,
+            "textAlign": "center",
+          }
+        }
+      >
+        COMPUTERS
+      </Text>
+      <View>
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "white",
+                "borderColor": "#e1e8ee",
+                "borderWidth": 1,
+                "margin": 15,
+                "marginBottom": 0,
+                "padding": 15,
+                "shadowColor": "rgba(0,0,0, .2)",
+                "shadowOffset": Object {
+                  "height": 0,
+                  "width": 0,
+                },
+                "shadowOpacity": 1,
+                "shadowRadius": 1,
+              },
+              Object {
+                "padding": 0,
+              },
+              undefined,
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                },
+                undefined,
+                undefined,
+              ]
+            }
+          >
+            <View>
+              <View
+                accessibilityIgnoresInvertColors={true}
+                style={
+                  Array [
+                    Object {
+                      "height": 150,
+                      "width": null,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                <Image
+                  resizeMode="cover"
+                  source={
+                    Object {
+                      "testUri": "../../../src/images/laptop1.jpeg",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "bottom": 0,
+                        "left": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      },
+                      Object {
+                        "height": undefined,
+                        "width": undefined,
+                      },
+                      undefined,
+                    ]
+                  }
+                />
+              </View>
+              <View
+                style={
+                  Array [
+                    Object {
+                      "padding": 10,
+                    },
+                    undefined,
+                  ]
+                }
+              />
+            </View>
+          </View>
+        </View>
+        <Text
+          style={
+            Object {
+              "fontSize": 24,
+              "textAlign": "center",
+            }
+          }
+        >
+          899$
+        </Text>
+        <Text
+          style={
+            Object {
+              "fontSize": 18,
+              "paddingHorizontal": 8,
+              "textAlign": "center",
+            }
+          }
+        >
+          DELL 15-DB0023NT AMD RYZEN 3 2200U 2.5GHZ-4GB-1TB HDD-15.6-AMD-W10 NOTEBOOK
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "marginHorizontal": 10,
+            "marginVertical": 15,
+          }
+        }
+      >
+        <View
+          accessibilityRole="button"
+          accessibilityStates={Array []}
+          accessible={true}
+          clickable={true}
+          isTVSelectable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {},
+              ]
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#007AFF",
+                    "fontSize": 18,
+                    "padding": 8,
+                    "textAlign": "center",
+                  },
+                ]
+              }
+            >
+              Buy
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View>
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "white",
+                "borderColor": "#e1e8ee",
+                "borderWidth": 1,
+                "margin": 15,
+                "marginBottom": 0,
+                "padding": 15,
+                "shadowColor": "rgba(0,0,0, .2)",
+                "shadowOffset": Object {
+                  "height": 0,
+                  "width": 0,
+                },
+                "shadowOpacity": 1,
+                "shadowRadius": 1,
+              },
+              Object {
+                "padding": 0,
+              },
+              undefined,
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                },
+                undefined,
+                undefined,
+              ]
+            }
+          >
+            <View>
+              <View
+                accessibilityIgnoresInvertColors={true}
+                style={
+                  Array [
+                    Object {
+                      "height": 150,
+                      "width": null,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                <Image
+                  resizeMode="cover"
+                  source={
+                    Object {
+                      "testUri": "../../../src/images/laptop2.jpeg",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "bottom": 0,
+                        "left": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      },
+                      Object {
+                        "height": undefined,
+                        "width": undefined,
+                      },
+                      undefined,
+                    ]
+                  }
+                />
+              </View>
+              <View
+                style={
+                  Array [
+                    Object {
+                      "padding": 10,
+                    },
+                    undefined,
+                  ]
+                }
+              />
+            </View>
+          </View>
+        </View>
+        <Text
+          style={
+            Object {
+              "fontSize": 24,
+              "textAlign": "center",
+            }
+          }
+        >
+          769$
+        </Text>
+        <Text
+          style={
+            Object {
+              "fontSize": 18,
+              "paddingHorizontal": 8,
+              "textAlign": "center",
+            }
+          }
+        >
+          ASUS S430FN CORE I7 8565U 1.8GHZ-8GB RAM-256GB SSD-14-MX150 2GB-W10 - NOTEBOOK
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "marginHorizontal": 10,
+            "marginVertical": 15,
+          }
+        }
+      >
+        <View
+          accessibilityRole="button"
+          accessibilityStates={Array []}
+          accessible={true}
+          clickable={true}
+          isTVSelectable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {},
+              ]
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#007AFF",
+                    "fontSize": 18,
+                    "padding": 8,
+                    "textAlign": "center",
+                  },
+                ]
+              }
+            >
+              Buy
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View>
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "white",
+                "borderColor": "#e1e8ee",
+                "borderWidth": 1,
+                "margin": 15,
+                "marginBottom": 0,
+                "padding": 15,
+                "shadowColor": "rgba(0,0,0, .2)",
+                "shadowOffset": Object {
+                  "height": 0,
+                  "width": 0,
+                },
+                "shadowOpacity": 1,
+                "shadowRadius": 1,
+              },
+              Object {
+                "padding": 0,
+              },
+              undefined,
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                },
+                undefined,
+                undefined,
+              ]
+            }
+          >
+            <View>
+              <View
+                accessibilityIgnoresInvertColors={true}
+                style={
+                  Array [
+                    Object {
+                      "height": 150,
+                      "width": null,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                <Image
+                  resizeMode="cover"
+                  source={
+                    Object {
+                      "testUri": "../../../src/images/laptop3.jpeg",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "bottom": 0,
+                        "left": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      },
+                      Object {
+                        "height": undefined,
+                        "width": undefined,
+                      },
+                      undefined,
+                    ]
+                  }
+                />
+              </View>
+              <View
+                style={
+                  Array [
+                    Object {
+                      "padding": 10,
+                    },
+                    undefined,
+                  ]
+                }
+              />
+            </View>
+          </View>
+        </View>
+        <Text
+          style={
+            Object {
+              "fontSize": 24,
+              "textAlign": "center",
+            }
+          }
+        >
+          999$
+        </Text>
+        <Text
+          style={
+            Object {
+              "fontSize": 18,
+              "paddingHorizontal": 8,
+              "textAlign": "center",
+            }
+          }
+        >
+          HP X540LA CORE I3 5005U 2.0GHZ-4GB RAM-500GB HDD-15.6W10 NOTEBOOK
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "marginHorizontal": 10,
+            "marginVertical": 15,
+          }
+        }
+      >
+        <View
+          accessibilityRole="button"
+          accessibilityStates={Array []}
+          accessible={true}
+          clickable={true}
+          isTVSelectable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {},
+              ]
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#007AFF",
+                    "fontSize": 18,
+                    "padding": 8,
+                    "textAlign": "center",
+                  },
+                ]
+              }
+            >
+              Buy
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </RCTScrollView>
+</View>
+`;
+
+exports[`renders Register correctly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "pink",
+      "height": "110%",
+      "justifyContent": "center",
+      "paddingTop": 10,
+    }
+  }
+>
+  <RCTScrollView>
+    <View>
+      <Text
+        style={
+          Object {
+            "color": "#424242",
+            "fontSize": 24,
+            "marginLeft": 10,
+            "marginTop": 15,
+          }
+        }
+      >
+        INFORMATİONS:
+      </Text>
+      <TextInput
+        allowFontScaling={true}
+        onChangeText={[Function]}
+        placeholder="Firstname"
+        rejectResponderTermination={true}
+        style={
+          Object {
+            "backgroundColor": "white",
+            "borderRadius": 8,
+            "color": "black",
+            "marginHorizontal": 10,
+            "marginVertical": 15,
+          }
+        }
+        underlineColorAndroid="transparent"
+        value={null}
+      />
+      <TextInput
+        allowFontScaling={true}
+        onChangeText={[Function]}
+        placeholder="Lastname"
+        rejectResponderTermination={true}
+        style={
+          Object {
+            "backgroundColor": "white",
+            "borderRadius": 8,
+            "color": "black",
+            "marginHorizontal": 10,
+            "marginVertical": 15,
+          }
+        }
+        underlineColorAndroid="transparent"
+        value={null}
+      />
+      <TextInput
+        allowFontScaling={true}
+        onChangeText={[Function]}
+        placeholder="Address"
+        rejectResponderTermination={true}
+        style={
+          Object {
+            "backgroundColor": "white",
+            "borderRadius": 8,
+            "color": "black",
+            "marginHorizontal": 10,
+            "marginVertical": 15,
+          }
+        }
+        underlineColorAndroid="transparent"
+        value={null}
+      />
+      <View
+        style={
+          Object {
+            "borderRadius": 8,
+            "marginHorizontal": 10,
+            "marginVertical": 15,
+          }
+        }
+      >
+        <View
+          accessibilityRole="button"
+          accessibilityStates={Array []}
+          accessible={true}
+          clickable={true}
+          isTVSelectable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {},
+              ]
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#007AFF",
+                    "fontSize": 18,
+                    "padding": 8,
+                    "textAlign": "center",
+                  },
+                ]
+              }
+            >
+              Submit
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </RCTScrollView>
+</View>
+`;

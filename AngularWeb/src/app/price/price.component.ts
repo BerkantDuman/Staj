@@ -13,8 +13,9 @@ import { Products } from '../products';
 })
 export class PriceComponent implements OnInit {
   allPeople: People[];
-  product_id: number;
+  product_id: number = 0;
   allProducts: Products[];
+  submitted = false;
 
   constructor(
     private peopleService: PeopleService,
@@ -30,8 +31,7 @@ export class PriceComponent implements OnInit {
     } else {
 
       const newPerson: People = { firstName, lastName, street, state, city, zip, product_id } as People;
-      this.peopleService
-        .addPerson(newPerson)
+      this.peopleService.addPerson(newPerson)
         .subscribe(person => this.allPeople.push(person));
     }
   }
@@ -41,7 +41,6 @@ export class PriceComponent implements OnInit {
       .subscribe(allProducts => this.allProducts = allProducts);
   }
 
-  submitted = false;
 
   selectedProduct(product: Products) {
     this.product_id = product.id;

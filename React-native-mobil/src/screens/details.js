@@ -28,14 +28,14 @@ class Details extends React.Component {
         this.searchData = this.searchData.bind(this);
         this.updateData = this.updateData.bind(this);
     }
-   componentWillMount() {
+    componentWillMount() {
         //call this function automatically while rendering page
         this.searchData();
     }
 
 
     searchData() {
-        fetch('http://192.168.1.64:3000/people/' + (this.props.navigation.state.params.Data), {
+        fetch('http://192.168.1.64:3000/people/' + this.props.navigation.state.params.Data, {
             method: 'GET',
 
 
@@ -45,6 +45,7 @@ class Details extends React.Component {
             this.setState({ apiData: jsonData })
         }).done();
         this.state.id = null;
+
     }
 
     deleteData(id) {
@@ -55,12 +56,11 @@ class Details extends React.Component {
         }).then((responseData) => {
             return responseData.json();
         }).done();
-        this.componentWillMount();
-        this.props.navigation.navigate('People');
+        this.props.navigation.push('People');
 
     }
 
- 
+
     updateData() {
         fetch('http://192.168.1.64:3000/people', {
             method: 'PUT',
@@ -83,6 +83,7 @@ class Details extends React.Component {
         this.state.lastname = null;
         this.state.address = null;
         this.componentWillMount();
+        this.props.navigation.push('People')
 
     }
 

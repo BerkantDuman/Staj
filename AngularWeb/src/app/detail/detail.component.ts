@@ -2,8 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { People } from '../people';
 import { PeopleService } from '../people.service';
 import { ActivatedRoute } from '@angular/router';
-import { FormsModule } from '@angular/forms';
-import { FormGroup, FormControl } from '@angular/forms';
+
 
 
 @Component({
@@ -13,8 +12,9 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class DetailComponent implements OnInit {
 
-  person: any[];
+  person: any [];
   allPeople: People[];
+  submitted = false;
 
 
   constructor(
@@ -26,12 +26,11 @@ export class DetailComponent implements OnInit {
     this.getPersonWithProduct();
   }
 
-  getPersonWithProduct(): void {
+  getPersonWithProduct() {
     const id = +this.route.snapshot.paramMap.get('id');
     this.peopleService.getPersonWithProduct(id)
       .subscribe(person => this.person = person);
   }
-
 
 
   update(firstName: string, lastName: string, street: string, city: string, state: string, zip: string): void {
@@ -41,7 +40,6 @@ export class DetailComponent implements OnInit {
       .subscribe();
   }
 
-  submitted = false;
 
   hide() {
     this.submitted = !this.submitted;

@@ -4,7 +4,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { PeopleService } from './people.service';
-import { RouterModule, Routes } from '@angular/router';
 
 
 

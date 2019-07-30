@@ -9,7 +9,7 @@ import { PeopleService } from '../people.service';
 })
 export class PeoplelistComponent implements OnInit {
 
-  @Input() allPeople: People[];
+  allPeople: People[];
 
 
   constructor(
@@ -31,5 +31,4 @@ export class PeoplelistComponent implements OnInit {
       .deletePerson(person.id)
       .subscribe();
   }
-
 }

@@ -40,12 +40,12 @@ class Register extends React.Component {
         }
 
         this.addItem = this.addItem.bind(this);
-
     }
+    
 
     componentWillMount() {
         //call this function automatically while rendering page
-        this.state.product_id = this.props.navigation.state.params.product
+         this.state.product_id = this.props.navigation.state.params.product
     }
     showToastMassage() {
         ToastAndroid.show('Your informations have taken, succesfuly!', ToastAndroid.LONG);
@@ -53,8 +53,9 @@ class Register extends React.Component {
     onPressed() {
         this.addItem();
         this.showToastMassage();
-        this.props.navigation.navigate('People');
+        this.props.navigation.push('People');
     }
+
 
     addItem() {
         fetch('http://192.168.1.64:3000/people', {
@@ -83,7 +84,7 @@ class Register extends React.Component {
 
 
     render() {
-        const { navigate } = this.props.navigation;
+        //const { navigate } = this.props.navigation;
         return (
             <View style={styles.container}>
 

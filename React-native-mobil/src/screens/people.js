@@ -9,12 +9,13 @@ import {
     TouchableHighlight
 } from 'react-native';
 
+//const fetch = require('node-fetch')
 class People extends React.Component {
     static navigationOptions = function (props) {
         return {
             title: 'People',
             headerRight: <View />,
-            headerRight: <TouchableHighlight onPress={() => props.navigation.navigate('Products')} style={{ margin: 12 }}>
+            headerRight: <TouchableHighlight onPress={() => props.navigation.push('Products')} style={{ margin: 12 }}>
                 <Text>
                     HOME
                 </Text>
@@ -23,6 +24,7 @@ class People extends React.Component {
         }
 
     }
+
 
     constructor(props) {
         super(props);
@@ -46,10 +48,6 @@ class People extends React.Component {
     componentWillMount() {
         //call this function automatically while rendering page
         this.getData();
-    }
-
-    componentWillUpdate(){
-        this.componentWillMount()
     }
 
     updateData() {
@@ -87,7 +85,6 @@ class People extends React.Component {
 
     }
 
-
     searchData() {
         fetch('http://192.168.1.64:3000/people/' + (this.state.id), {
             method: 'GET',
@@ -110,9 +107,7 @@ class People extends React.Component {
         }).then((jsonData) => {
             this.setState({ apiData: jsonData })
         }).done();
-        this.state.id = null;
     }
-
 
 
     renderItem(item) {
@@ -131,7 +126,7 @@ class People extends React.Component {
                     </Text>
                     </TouchableHighlight>
 
-                    <TouchableHighlight style={styles.touchableButton} onPress={() => this.props.navigation.navigate('Details', {
+                    <TouchableHighlight style={styles.touchableButton} onPress={() => this.props.navigation.push('Details', {
                         Data: item.id,
                     })}>
                         <Text style={styles.detailButton}>
@@ -146,7 +141,7 @@ class People extends React.Component {
     }
 
     render() {
-        const { navigate } = this.props.navigation;
+        //const  { push }  = this.props.navigation;
         return (
             <View style={styles.container}>
 
@@ -165,7 +160,7 @@ class People extends React.Component {
                     />
 
 
-                    <View style={styles.buttonContainer} >
+                    <View style={styles.buttonContainer} >      
 
                         <Button
 
@@ -173,8 +168,6 @@ class People extends React.Component {
                             title="Search"
                         />
                     </View>
-
-
 
 
                     <ScrollView>
