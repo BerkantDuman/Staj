@@ -1,9 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-
-
-
+import { of } from 'rxjs';
 import { PriceComponent } from './price.component';
 import { PeopleService } from '../people.service';
 import { FormsModule } from '@angular/forms';
@@ -12,6 +9,11 @@ import { Products } from '../products';
 describe('PriceComponent', () => {
   let component: PriceComponent;
   let fixture: ComponentFixture<PriceComponent>;
+  let mockProducts;
+  let mockPeople;
+  let peopleService: PeopleService;
+  let spy: jasmine.Spy;
+  let addPerson: jasmine.Spy
   beforeEach(async(() => {
 
     TestBed.configureTestingModule({
@@ -25,22 +27,56 @@ describe('PriceComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(PriceComponent);
     component = fixture.componentInstance;
+    peopleService = fixture.debugElement.injector.get(PeopleService);
+
+    mockProducts = [
+      {
+        name: "DELL",
+        id: 1,
+        prices: 700,
+        informations: "DELL 15-DB0023NT AMD RYZEN 3 2200U 2.5GHZ-4GB-1TB HDD-15.6-AMD-W10 NOTEBOOK"
+      },
+      {
+        name: "ASUS",
+        id: 2,
+        prices: 900,
+        informations: "ASUS S430FN CORE I7 8565U 1.8GHZ-8GB RAM-256GB SSD-14-MX150 2GB-W10 - NOTEBOOK"
+      },
+      {
+        name: "HP",
+        id: 3,
+        prices: 799,
+        informations: "HP X540LA CORE I3 5005U 2.0GHZ-4GB RAM-500GB HDD-15.6W10 NOTEBOOK"
+      }
+    ]
+
+    mockPeople = [
+      {
+        firstName: "Freud",
+        lastName: "Duman",
+        street: "a",
+        city: "c",
+        state: "b",
+        zip: "d",
+        id: 1,
+        product_id: 1
+      },
+    ]
+    spy = spyOn(peopleService, 'getAllProducts').and.returnValue(of(mockProducts));
+
     fixture.detectChanges();
   });
 
-  it('#hide() should toggle sumbitted', () => {
+
+
+  it('#show() should toggle sumbitted', () => {
     const peopleService = TestBed.get(PeopleService);
 
     const comp = new PriceComponent(peopleService);
     expect(comp.submitted).toBe(false, 'at first');
     comp.show();
-    expect(comp.submitted).toBe(true, 'after first click');
-    comp.show();
-    expect(comp.submitted).toBe(false, 'after second click');
+    expect(comp.submitted).toBe(true, 'after first click'); 
   });
-
-
-
 
   it('#SelectedProduct()', () => {
     const peopleService = TestBed.get(PeopleService);
@@ -59,26 +95,21 @@ describe('PriceComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  it('should call getAllProducts from peopleService ', () => {
+    component.getAllProducts();
+    expect(spy.calls.any()).toBeTruthy();
+    expect(component.allProducts.length).toBe(3);
+  });
+
+  it('should call addPerson from peopleService ', () => {
+    addPerson = spyOn(peopleService, 'addPerson').and.returnValue(of(mockPeople));
+    component.addPerson(mockPeople.firstName, mockPeople.lastName, mockPeople.street, mockPeople.city, mockPeople.state, mockPeople.zip, mockPeople.product_id);
+    expect(addPerson.calls.any()).toBeTruthy();
+ 
+  });
 
 
-    /* it('can test http.get', ()=> {
-     const testData: any[] = [{ id: 1, firstName: 'A', lastName: 'B', street: 'C', city: 'D', state: 'E', zip: 'F', product_id: 1, prices: 100, name: 'G', informations: 'H' }];
-     const peopleService = TestBed.get(PeopleService);
- 
-     peopleService.getAllProducts()
-     .subscribe(data =>
-       // When observable resolves, result should match test data
-       expect(data).toEqual(testData)
-     );
-     const comp = new PriceComponent(peopleService);
-     //comp.getAllProducts();
- 
-     const req = httpTestingController.expectOne('http://localhost:5000/products');
-     expect(req.request.method).toEqual('GET');
-     req.flush(testData);
-     httpTestingController.verify();
- 
-   });*/
+
 });
 
 

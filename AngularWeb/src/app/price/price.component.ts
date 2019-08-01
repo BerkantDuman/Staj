@@ -1,10 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
-import { Validators } from '@angular/forms';
-import { FormsModule } from '@angular/forms';
 import { People } from '../people';
 import { PeopleService } from '../people.service';
 import { Products } from '../products';
+
 
 @Component({
   selector: 'app-price',

@@ -1,24 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { DetailComponent } from './detail.component';
 import { PeopleService } from '../people.service';
-import { ActivatedRoute, } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
-
 import { FormsModule } from '@angular/forms';
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-
-import { HttpClient } from '@angular/common/http';
-import { asyncData } from 'src/testing/async-observable-helpers';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { of } from 'rxjs';
 
 
 describe('DetailComponent', () => {
   let component: DetailComponent;
   let fixture: ComponentFixture<DetailComponent>;
- // let httpClient: HttpClient;
- // let httpTestingController: HttpTestingController;
-
-  let peopleService: PeopleService;  
-  let activetedRoute: ActivatedRoute;
+  let spy: jasmine.Spy;
+  let mockPeople;
+  let mockUpdated;
+  let update: jasmine.Spy;
+  let peopleService: PeopleService;
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [DetailComponent],
@@ -31,97 +27,82 @@ describe('DetailComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(DetailComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
-    
-  //  httpClient = TestBed.get(HttpClient);
-  // httpTestingController = TestBed.get(HttpTestingController);
+    peopleService = fixture.debugElement.injector.get(PeopleService);
 
-    peopleService = TestBed.get(PeopleService);
-    activetedRoute = TestBed.get(ActivatedRoute);
+    mockPeople = [
+      {
+        firstName: "Freud",
+        lastName: "Duman",
+        street: "a",
+        city: "c",
+        state: "b",
+        zip: "d",
+        id: 1,
+        product_id: 1,
+        name: "DELL",
+        prices: 700,
+        informations: "DELL 15-DB0023NT AMD RYZEN 3 2200U 2.5GHZ-4GB-1TB HDD-15.6-AMD-W10 NOTEBOOK",
+      },
+    ]
+
+    mockUpdated = [
+      {
+        firstName: "BERKANT",
+        lastName: "Duman",
+        street: "a",
+        city: "c",
+        state: "b",
+        zip: "d",
+        id: 1,
+        product_id: 1,
+        name: "DELL",
+        prices: 700,
+        informations: "DELL 15-DB0023NT AMD RYZEN 3 2200U 2.5GHZ-4GB-1TB HDD-15.6-AMD-W10 NOTEBOOK",
+      },
+    ]
+
+
+    jasmine.getEnv().allowRespy(true); //we can use spy multiple times.
+    spy = spyOn(peopleService, 'getPersonWithProduct').and.returnValue(of(mockPeople));
+    fixture.detectChanges();
+
   });
 
+
+
   it('#hide() should toggle sumbitted', () => {
-    
-    const comp = new DetailComponent(peopleService, activetedRoute);
-    expect(comp.submitted).toBe(false, 'at first');
-    comp.hide();
-    expect(comp.submitted).toBe(true, 'after first click');
-    comp.hide();
-    expect(comp.submitted).toBe(false, 'after second click');
+
+    expect(component.submitted).toBe(false, 'at first');
+    component.hide();
+    expect(component.submitted).toBe(true, 'after first click');
+    component.hide();
+    expect(component.submitted).toBe(false, 'after second click');
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
-  });
+    component.getPersonWithProduct();
+    expect(component.person).toEqual(mockPeople);
+    expect(spy.calls.any()).toBeTruthy();
 
+  })
 
-  // Bu fonksiyon peopele.service.spec.ts de çalışırken burada çalışmıyor
-  /* it('should update a people and return it', () => {
- 
-     const updatePerson: People[] = [{ id: 1, firstName: 'A', lastName: 'B', street: 'C', city: 'D', state: 'E', zip: 'F', product_id: 1 }];
-     const peopleService = TestBed.get(PeopleService);
- 
-     peopleService.updatePerson(updatePerson, 1).subscribe(
-       data => expect(data).toEqual(updatePerson, 'should return the people')
-     );
- 
-     const req = httpTestingController.expectOne('http://localhost:5000/people/1'); => burda 1  yazınca 0 , 0 yazınca 1 algılıyor ?
-     expect(req.request.method).toEqual('PUT');
-     expect(req.request.body).toEqual(updatePerson);
- 
-     req.flush(updatePerson);
-     httpTestingController.verify();
-   });*/
+  it('should call update from peeopleService', ()=> {
 
-  /*it('should return expected people (HttpClient called once)', () => {
-    const activetedRoute = TestBed.get(ActivatedRoute);
-    const comp = new DetailComponent(peopleService, activetedRoute);
+    update = spyOn(peopleService, 'updatePerson').and.returnValue(of(mockUpdated))
+    component.update(mockUpdated.firstName, mockUpdated.lastName, mockUpdated.street, mockUpdated.city, mockUpdated.state, mockUpdated.zip)
+    expect(update.calls.any()).toBeTruthy();
 
-    const expectedPeople: any[] = [{ id: 1, firstName: 'A', lastName: 'B', street: 'C', city: 'D', state: 'E', zip: 'F', product_id: 1, prices: 100, name: 'G', informations: 'H' }];
-    httpClientSpy.get.and.returnValue(asyncData(expectedPeople));
+  })
 
-    /*peopleService.getPersonWithProduct(1)
-      .subscribe(person =>
-        expect(person).toEqual(expectedPeople)
-      );
-      comp.getPersonWithProduct();
+  it('should re-call getProductWithPeople function after update', () => {
+    spy = spyOn(peopleService, 'getPersonWithProduct').and.returnValue(of(mockUpdated));
+    component.getPersonWithProduct();
+    expect(component.person).toEqual(mockUpdated); 
+    expect(spy.calls.any()).toBeTruthy();
 
-    expect(httpClientSpy.get.calls.count()).toBe(1, 'one call');
-  });*/
+  })
 
-
-
-
-  /*  it('should return expected people update (HttpClient called once)', () => {
-     const activetedRoute = TestBed.get(ActivatedRoute);
-     const comp = new DetailComponent(peopleService, activetedRoute);
-     
-      const expectedPeople: People =
-        { id: 1, firstName: 'A', lastName: 'B', street: 'C', city: 'D', state: 'E', zip: 'F', product_id: 1 };
-      httpClientSpy.get.and.returnValue(asyncData(expectedPeople));
-      
-      comp.update(expectedPeople.firstName,expectedPeople.firstName,expectedPeople.firstName,expectedPeople.firstName,expectedPeople.firstName, 1)
-      
-  
-      expect(httpClientSpy.get.calls.count()).toBe(1, 'one call');
-    });*/
-
-  /* it('can test http.get', ()=> {
-  const testData: any[] =  [{ id: 1, firstName: 'A', lastName: 'B', street: 'C', city: 'D', state: 'E', zip: 'F', product_id: 1, prices: 100, name:'G', informations:'H' }];
-  const peopleService = TestBed.get(PeopleService);
- 
-  peopleService.getPersonWithProduct(1)
-  .subscribe(data =>
-    // When observable resolves, result should match test data
-    expect(data).toEqual(testData)
-  );
- 
-  const req = httpTestingController.expectOne('http://localhost:5000/products/1');
-  expect(req.request.method).toEqual('GET');
-  req.flush(testData);
-  httpTestingController.verify();
- 
-});*/
 
 
 

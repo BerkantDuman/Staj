@@ -41,7 +41,7 @@ module.exports = "<app-navbar></app-navbar>\n<router-outlet></router-outlet>\n"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = " <body>\n   <div class=\"row\" [hidden]=submitted>\n\n     <div class=\"info\" *ngFor=\"let per of person\">\n\n\n       <h1>{{ per.firstName }}'s Details</h1>\n       <div class=\"person\">\n\n         <h4> ID: {{per.id }}</h4>\n         <h4> Name: {{ per.firstName }}</h4>\n         <h4> Lastname: {{ per.lastName }}</h4>\n         <h4> Street: {{ per.street }}</h4>\n         <h4> City: {{ per.city }}</h4>\n         <h4> State: {{ per.state }}</h4>\n         <h4> Zip: {{ per.zip }}</h4>\n         <h4> Product: {{ per.name }}</h4>\n       </div>\n       <button id=\"edit\" class=\"btn btn-primary\" (click)=\"hide()\">Edit</button>\n\n     </div>\n\n   </div>\n\n   <div class=\"all\" [hidden]=!submitted>\n     <img id=\"logo\" src=\"assets/images/online-shop.png\" alt=\"\">\n     <form class=\"form\" #personForm=\"ngForm\">\n\n       <div class=\"form-group\">\n         <h3>Informations:</h3>\n         <div class=\"form-group\">\n           <label for=\"firstName\">Name: </label>\n           <input id=\"name\" class=\"form-control\" [(ngModel)]=\"person[0].firstName\" type=\"text\" name=\"firstName\" placeholder=\"Name\" #firstName #spy required>\n\n         </div>\n         <div class=\"form-group\">\n           <label for=\"lastName\">Last Name: </label>\n           <input id=\"lastname\" class=\"form-control\" [(ngModel)]=\"person[0].lastName\" type=\"text\" name=\"lastName\" placeholder=\"Lastname\" #lastName>\n\n         </div>\n         <h3>Address:</h3>\n\n         <div class=\"form-group\">\n           <label> Street: </label>\n           <input id=\"street\" class=\"form-control\" [(ngModel)]=\"person[0].street\" type=\"text\" name=\"street\" placeholder=\"Street\" #street>\n\n         </div>\n\n         <div class=\"form-group\">\n           <label>City:</label>\n           <input id=\"city\" class=\"form-control\" [(ngModel)]=\"person[0].city\" type=\"text\" name=\"city\" placeholder=\"City\" #city>\n\n         </div>\n         <div class=\"form-group\">\n           <label>State:</label>\n\n           <input id=\"state\" class=\"form-control\" [(ngModel)]=\"person[0].state\" type=\"text\" name=\"state\" placeholder=\"State\" #state>\n\n         </div>\n         <div class=\"form-group\">\n\n           <label>Zip Code:</label>\n           <input id=\"zip\" class=\"form-control\" [(ngModel)]=\"person[0].zip\" type=\"text\" name=\"zip\" placeholder=\"Zip\" #zip>\n\n         </div>\n\n       </div>\n\n       <button type=\"submit\" class=\"btn btn-success\" [disabled]=\"!personForm.form.valid\" (click)=\"update(firstName.value, lastName.value, street.value, city.value, state.value, zip.value); show();\">Save</button>\n     </form>>\n   </div>\n </body>\n"
+module.exports = " <body>\n   <div class=\"row\" [hidden]=submitted>\n\n     <div class=\"info\" *ngFor=\"let per of person\">\n\n\n       <h1>{{ per.firstName }}'s Details</h1>\n       <div class=\"person\">\n\n         <h4> ID: {{per.id }}</h4>\n         <h4> Name: {{ per.firstName }}</h4>\n         <h4> Lastname: {{ per.lastName }}</h4>\n         <h4> Street: {{ per.street }}</h4>\n         <h4> City: {{ per.city }}</h4>\n         <h4> State: {{ per.state }}</h4>\n         <h4> Zip: {{ per.zip }}</h4>\n         <h4> Product: {{ per.name }}</h4>\n       </div>\n       <button id=\"edit\" class=\"btn btn-primary\" (click)=\"hide()\">Edit</button>\n\n     </div>\n\n   </div>\n  <!-- [(Ngmodel)] = person[0].name vs kaldırıldı-->\n   <div class=\"all\" [hidden]=!submitted>\n     <img id=\"logo\" src=\"assets/images/online-shop.png\" alt=\"\">\n     <form class=\"form\" #personForm=\"ngForm\">\n\n       <div class=\"form-group\">\n         <h3>Informations:</h3>\n         <div class=\"form-group\">\n           <label for=\"firstName\">Name: </label>\n           <input id=\"name\" class=\"form-control\"  type=\"text\" name=\"firstName\" placeholder=\"Name\" #firstName #spy required>\n\n         </div>\n         <div class=\"form-group\">\n           <label for=\"lastName\">Last Name: </label>\n           <input id=\"lastname\" class=\"form-control\"  type=\"text\" name=\"lastName\" placeholder=\"Lastname\" #lastName>\n\n         </div>\n         <h3>Address:</h3>\n\n         <div class=\"form-group\">\n           <label> Street: </label>\n           <input id=\"street\" class=\"form-control\"  type=\"text\" name=\"street\" placeholder=\"Street\" #street>\n\n         </div>\n\n         <div class=\"form-group\">\n           <label>City:</label>\n           <input id=\"city\" class=\"form-control\"  type=\"text\" name=\"city\" placeholder=\"City\" #city>\n\n         </div>\n         <div class=\"form-group\">\n           <label>State:</label>\n\n           <input id=\"state\" class=\"form-control\"  type=\"text\" name=\"state\" placeholder=\"State\" #state>\n\n         </div>\n         <div class=\"form-group\">\n\n           <label>Zip Code:</label>\n           <input id=\"zip\" class=\"form-control\"  type=\"text\" name=\"zip\" placeholder=\"Zip\" #zip>\n\n         </div>\n\n       </div>\n\n       <button type=\"submit\" class=\"btn btn-success\" [disabled]=\"!personForm.form.valid\" (click)=\"update(firstName.value, lastName.value, street.value, city.value, state.value, zip.value); hide();\">Save</button>\n     </form>>\n   </div>\n </body>\n"
 
 /***/ }),
 
@@ -52,7 +52,7 @@ module.exports = " <body>\n   <div class=\"row\" [hidden]=submitted>\n\n     <di
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"nav-bar\">\n\n  <nav class=\"navbar navbar-light\">\n    <a class=\"navbar-brand\" href=\"#\">\n      <h3>WorldWideNet <img id=\"logo\" src=\"/assets/images/online-shop.png\" alt=\"\"> </h3>\n\n    </a>\n\n    <ul class=\"nav justify-content-end\">\n      <li class=\"nav-item\">\n        <a class=\"nav-link active\" routerLink= \"/list\">All People List</a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" href=\"#\">Enterprice</a>\n      </li>\n      <li class=\"nav-item\">\n        <a routerLink=\"/booking\" class=\"nav-link\" href=\"#\">Support</a>\n      </li>\n      <li class=\"nav-item\">\n        <button type=\"button\" class=\"btn btn-outline-dark\"> sing up </button>\n      </li>\n    </ul>\n\n  </nav>\n\n</div>\n"
+module.exports = "\n<div class=\"nav-bar\">\n\n  <nav class=\"navbar navbar-light\">\n    <a class=\"navbar-brand\" href=\"#\">\n      <h3>WorldWideNet <img id=\"logo\" src=\"/assets/images/online-shop.png\" alt=\"\"> </h3>\n\n    </a>\n\n    <ul class=\"nav justify-content-end\">\n      <li class=\"nav-item\">\n        <a class=\"nav-link active\" routerLink= \"/list\">All People List</a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" href=\"#\">Enterprice</a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" href=\"#\">Support</a>\n      </li>\n      <li class=\"nav-item\">\n        <button type=\"button\" class=\"btn btn-outline-dark\"> sing up </button>\n      </li>\n    </ul>\n\n  </nav>\n\n</div>\n"
 
 /***/ }),
 
@@ -63,7 +63,7 @@ module.exports = "\n<div class=\"nav-bar\">\n\n  <nav class=\"navbar navbar-ligh
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<body>\n\n\n\n    <div class=\"all\">\n\n      <ul class=\"allPeople\">\n\n        <li *ngFor=\"let person of allPeople\">\n          <a routerLink=\"/detail/{{person.id}}\">\n            <span class=\"badge\">{{ person.id }}</span> {{ person.firstName }}\n          </a>\n          <button class=\"delete\" title=\"delete person\" (click)=\"delete(person)\" routerLink=\"/list\">x</button>\n          <button routerLink=\"/detail/{{person.id}}\"  class=\"btn btn-primary\">Show details</button>\n        </li>\n\n      </ul>\n    </div>\n    \n\n</body>\n"
+module.exports = "<body>\n    <div class=\"all\">\n\n      <ul class=\"allPeople\">\n\n        <li *ngFor=\"let person of allPeople\">\n          <a routerLink=\"/detail/{{person.id}}\">\n            <span class=\"badge\">{{ person.id }}</span> {{ person.firstName }}\n          </a>\n          <button class=\"delete\" title=\"delete person\" (click)=\"delete(person)\" routerLink=\"/list\">x</button>\n          <button routerLink=\"/detail/{{person.id}}\"  class=\"btn btn-primary\">Show details</button>\n        </li>\n\n      </ul>\n    </div>\n</body>\n"
 
 /***/ }),
 
@@ -74,7 +74,7 @@ module.exports = "<body>\n\n\n\n    <div class=\"all\">\n\n      <ul class=\"all
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<body>\n\n\n  <div class=\"all\" [hidden]=submitted>\n    <img id=\"logo\" src=\"assets/images/online-shop.png\" alt=\"\" >\n\n      <div class=\"title\">\n        <h1>Computers</h1>\n        <h3 id=\"hotelTitle\">price</h3>\n        <p>You can find the best computers for yourself.</p>\n\n      </div>\n\n\n\n\n    <section class=\"pricing\">\n      <div class=\"row\">\n\n        <div class=\"col-6 col-md-4\" *ngFor =\"let product of allProducts\">\n          <div class=\"card-text-center\" style=\"width: 18rem;\">\n            <img src=\"assets/images/laptop{{product.id}}.jpeg\" class=\"card-img-top\" alt=\"...\">\n            <div class=\"card-body\">\n              <h3>{{ product.name }}</h3>\n              <p class=\"card-text\">{{ product.informations }}</p>\n              <h3>{{ product.prices }}$</h3>\n              <button class=\"btn btn-primary\" type=\"button\" name=\"button\" (click)=\"selectedProduct(product)\"> Buy </button>\n            </div>\n          </div>\n        </div>\n\n      </div>\n\n    </section>\n\n    <section class=\"info\">\n      <footer class=\"pt-4 my-md-5 pt-md-5 border-top\">\n        <div class=\"row\">\n          <div class=\"col-6 col-md-4\">\n            <h5>Features</h5>\n            <ul class=\"list-unstyled text-small\">\n              <li><a class=\"text-muted\" href=\"#\">Cool stuff</a></li>\n              <li><a class=\"text-muted\" href=\"#\">Random feature</a></li>\n\n            </ul>\n          </div>\n          <div class=\"col-6 col-md-4\">\n            <h5>Resources</h5>\n            <ul class=\"list-unstyled text-small\">\n              <li><a class=\"text-muted\" href=\"#\">Resource</a></li>\n              <li><a class=\"text-muted\" href=\"#\">Resource name</a></li>\n\n            </ul>\n          </div>\n          <div class=\"col-6 col-md-4\">\n            <h5>About</h5>\n            <ul class=\"list-unstyled text-small\">\n              <li><a class=\"text-muted\" href=\"#\">Team</a></li>\n              <li><a class=\"text-muted\" href=\"#\">Locations</a></li>\n            </ul>\n          </div>\n        </div>\n      </footer>\n\n    </section>\n\n  </div>\n\n  <div class=\"all\" [hidden]=!submitted>\n    <img id=\"logo\" src=\"assets/images/online-shop.png\" alt=\"\">\n    <form class=\"form\" #personForm=\"ngForm\">\n\n      <div class=\"form-group\">\n        <h3>Informations:</h3>\n        <div class=\"form-group\">\n          <label for=\"firstName\">Name: </label>\n          <input id=\"name\" class=\"form-control\" type=\"text\" name=\"firstName\" placeholder=\"Name\" #firstName #spy required>\n\n        </div>\n        <div class=\"form-group\">\n          <label for=\"lastName\">Last Name: </label>\n          <input id=\"lastname\" class=\"form-control\" type=\"text\" name=\"lastName\" placeholder=\"Lastname\" #lastName>\n\n        </div>\n        <h3>Address:</h3>\n\n        <div class=\"form-group\">\n          <label> Street: </label>\n          <input id=\"street\" class=\"form-control\" type=\"text\" name=\"street\" placeholder=\"Street\" #street>\n\n        </div>\n\n        <div class=\"form-group\">\n          <label>City:</label>\n          <input id=\"city\" class=\"form-control\" type=\"text\" name=\"city\" placeholder=\"City\" #city>\n\n        </div>\n        <div class=\"form-group\">\n          <label>State:</label>\n\n          <input id=\"state\" class=\"form-control\" type=\"text\" name=\"state\" placeholder=\"State\" #state>\n\n        </div>\n        <div class=\"form-group\">\n\n          <label>Zip Code:</label>\n          <input id=\"zip\" class=\"form-control\" type=\"text\" name=\"zip\" placeholder=\"Zip\" #zip>\n\n        </div>\n\n      </div>\n\n      <button type=\"submit\" class=\"btn btn-success\" [disabled]=\"!personForm.form.valid\" (click)=\"addPerson(firstName.value, lastName.value, street.value, city.value, state.value, zip.value); show();\">Submit</button>\n    </form>\n    <p>Form Status: {{ personForm.status }}</p>\n  </div>\n\n</body>\n"
+module.exports = "<body>\n\n\n  <div class=\"all\" [hidden]=submitted>\n    <img id=\"logo\" src=\"assets/images/online-shop.png\" alt=\"\" >\n\n      <div class=\"title\">\n        <h1>Computers</h1>\n        <h3 id=\"hotelTitle\">price</h3>\n        <p>You can find the best computers for yourself.</p>\n\n      </div>\n\n\n\n\n    <section class=\"pricing\">\n      <div class=\"row\">\n\n        <div class=\"col-6 col-md-4\" *ngFor =\"let product of allProducts\">\n          <div class=\"card-text-center\" style=\"width: 18rem;\">\n            <img src=\"assets/images/laptop{{product.id}}.jpeg\" class=\"card-img-top\" alt=\"...\">\n            <div class=\"card-body\">\n              <h3>{{ product.name }}</h3>\n              <p class=\"card-text\">{{ product.informations }}</p>\n              <h3>{{ product.prices }}$</h3>\n              <button class=\"btn btn-primary\" type=\"button\" name=\"button\" (click)=\"selectedProduct(product)\"> Buy </button>\n            </div>\n          </div>\n        </div>\n\n      </div>\n\n    </section>\n\n    <section class=\"info\">\n      <footer class=\"pt-4 my-md-5 pt-md-5 border-top\">\n        <div class=\"row\">\n          <div class=\"col-6 col-md-4\">\n            <h5>Features</h5>\n            <ul class=\"list-unstyled text-small\">\n              <li><a class=\"text-muted\" href=\"#\">Cool stuff</a></li>\n              <li><a class=\"text-muted\" href=\"#\">Random feature</a></li>\n\n            </ul>\n          </div>\n          <div class=\"col-6 col-md-4\">\n            <h5>Resources</h5>\n            <ul class=\"list-unstyled text-small\">\n              <li><a class=\"text-muted\" href=\"#\">Resource</a></li>\n              <li><a class=\"text-muted\" href=\"#\">Resource name</a></li>\n\n            </ul>\n          </div>\n          <div class=\"col-6 col-md-4\">\n            <h5>About</h5>\n            <ul class=\"list-unstyled text-small\">\n              <li><a class=\"text-muted\" href=\"#\">Team</a></li>\n              <li><a class=\"text-muted\" href=\"#\">Locations</a></li>\n            </ul>\n          </div>\n        </div>\n      </footer>\n\n    </section>\n\n  </div>\n\n  <div class=\"all\" [hidden]=!submitted>\n    <img id=\"logo\" src=\"assets/images/online-shop.png\" alt=\"\">\n    <form class=\"form\" #personForm=\"ngForm\">\n\n      <div class=\"form-group\">\n        <h3>Informations:</h3>\n        <div class=\"form-group\">\n          <label for=\"firstName\">Name: </label>\n          <input id=\"name\" class=\"form-control\" type=\"text\" name=\"firstName\" placeholder=\"Name\" #firstName #spy required>\n\n        </div>\n        <div class=\"form-group\">\n          <label for=\"lastName\">Last Name: </label>\n          <input id=\"lastname\" class=\"form-control\" type=\"text\" name=\"lastName\" placeholder=\"Lastname\" #lastName>\n\n        </div>\n        <h3>Address:</h3>\n\n        <div class=\"form-group\">\n          <label> Street: </label>\n          <input id=\"street\" class=\"form-control\" type=\"text\" name=\"street\" placeholder=\"Street\" #street>\n\n        </div>\n\n        <div class=\"form-group\">\n          <label>City:</label>\n          <input id=\"city\" class=\"form-control\" type=\"text\" name=\"city\" placeholder=\"City\" #city>\n\n        </div>\n        <div class=\"form-group\">\n          <label>State:</label>\n\n          <input id=\"state\" class=\"form-control\" type=\"text\" name=\"state\" placeholder=\"State\" #state>\n\n        </div>\n        <div class=\"form-group\">\n\n          <label>Zip Code:</label>\n          <input id=\"zip\" class=\"form-control\" type=\"text\" name=\"zip\" placeholder=\"Zip\" #zip>\n\n        </div>\n\n      </div>\n\n      <button class=\"btn btn-success\" [disabled]=\"!personForm.form.valid\" (click)=\"addPerson(firstName.value, lastName.value, street.value, city.value, state.value, zip.value); show();\">Submit</button>\n    </form>\n  </div>\n\n</body>"
 
 /***/ }),
 
@@ -110,7 +110,9 @@ var AppRoutingModule = /** @class */ (function () {
     }
     AppRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-            imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forRoot(routes)],
+            imports: [
+                _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forRoot(routes)
+            ],
             exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]],
         })
     ], AppRoutingModule);
@@ -180,14 +182,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 /* harmony import */ var _people_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./people.service */ "./src/app/people.service.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
-/* harmony import */ var _price_price_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./price/price.component */ "./src/app/price/price.component.ts");
-/* harmony import */ var _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./navbar/navbar.component */ "./src/app/navbar/navbar.component.ts");
-/* harmony import */ var _detail_detail_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./detail/detail.component */ "./src/app/detail/detail.component.ts");
-/* harmony import */ var _peoplelist_peoplelist_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./peoplelist/peoplelist.component */ "./src/app/peoplelist/peoplelist.component.ts");
-
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
+/* harmony import */ var _price_price_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./price/price.component */ "./src/app/price/price.component.ts");
+/* harmony import */ var _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./navbar/navbar.component */ "./src/app/navbar/navbar.component.ts");
+/* harmony import */ var _detail_detail_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./detail/detail.component */ "./src/app/detail/detail.component.ts");
+/* harmony import */ var _peoplelist_peoplelist_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./peoplelist/peoplelist.component */ "./src/app/peoplelist/peoplelist.component.ts");
 
 
 
@@ -207,29 +207,28 @@ var AppModule = /** @class */ (function () {
     AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
             declarations: [
-                _app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"],
-                _price_price_component__WEBPACK_IMPORTED_MODULE_9__["PriceComponent"],
-                _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_10__["NavbarComponent"],
-                _detail_detail_component__WEBPACK_IMPORTED_MODULE_11__["DetailComponent"],
-                _peoplelist_peoplelist_component__WEBPACK_IMPORTED_MODULE_12__["PeoplelistComponent"],
+                _app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"],
+                _price_price_component__WEBPACK_IMPORTED_MODULE_8__["PriceComponent"],
+                _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_9__["NavbarComponent"],
+                _detail_detail_component__WEBPACK_IMPORTED_MODULE_10__["DetailComponent"],
+                _peoplelist_peoplelist_component__WEBPACK_IMPORTED_MODULE_11__["PeoplelistComponent"],
             ],
             exports: [
-                _app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"],
-                _price_price_component__WEBPACK_IMPORTED_MODULE_9__["PriceComponent"],
-                _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_10__["NavbarComponent"],
-                _detail_detail_component__WEBPACK_IMPORTED_MODULE_11__["DetailComponent"],
-                _peoplelist_peoplelist_component__WEBPACK_IMPORTED_MODULE_12__["PeoplelistComponent"],
+                _app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"],
+                _price_price_component__WEBPACK_IMPORTED_MODULE_8__["PriceComponent"],
+                _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_9__["NavbarComponent"],
+                _detail_detail_component__WEBPACK_IMPORTED_MODULE_10__["DetailComponent"],
+                _peoplelist_peoplelist_component__WEBPACK_IMPORTED_MODULE_11__["PeoplelistComponent"],
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
-                _app_routing_module__WEBPACK_IMPORTED_MODULE_8__["AppRoutingModule"],
+                _app_routing_module__WEBPACK_IMPORTED_MODULE_7__["AppRoutingModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientModule"],
-                _angular_router__WEBPACK_IMPORTED_MODULE_6__["RouterModule"]
             ],
             providers: [_people_service__WEBPACK_IMPORTED_MODULE_5__["PeopleService"]],
-            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"]]
+            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
@@ -272,6 +271,8 @@ var DetailComponent = /** @class */ (function () {
     function DetailComponent(peopleService, route) {
         this.peopleService = peopleService;
         this.route = route;
+        this.person = [];
+        this.allPeople = [];
         this.submitted = false;
     }
     DetailComponent.prototype.ngOnInit = function () {
@@ -290,10 +291,7 @@ var DetailComponent = /** @class */ (function () {
             .subscribe();
     };
     DetailComponent.prototype.hide = function () {
-        this.submitted = true;
-    };
-    DetailComponent.prototype.show = function () {
-        this.submitted = false;
+        this.submitted = !this.submitted;
     };
     DetailComponent.ctorParameters = function () { return [
         { type: _people_service__WEBPACK_IMPORTED_MODULE_2__["PeopleService"] },
@@ -457,6 +455,7 @@ __webpack_require__.r(__webpack_exports__);
 var PeoplelistComponent = /** @class */ (function () {
     function PeoplelistComponent(peopleService) {
         this.peopleService = peopleService;
+        this.allPeople = [];
     }
     PeoplelistComponent.prototype.ngOnInit = function () {
         this.getAllPeople();
@@ -475,10 +474,6 @@ var PeoplelistComponent = /** @class */ (function () {
     PeoplelistComponent.ctorParameters = function () { return [
         { type: _people_service__WEBPACK_IMPORTED_MODULE_2__["PeopleService"] }
     ]; };
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Array)
-    ], PeoplelistComponent.prototype, "allPeople", void 0);
     PeoplelistComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-peoplelist',
@@ -524,6 +519,7 @@ __webpack_require__.r(__webpack_exports__);
 var PriceComponent = /** @class */ (function () {
     function PriceComponent(peopleService) {
         this.peopleService = peopleService;
+        this.product_id = 0;
         this.submitted = false;
     }
     PriceComponent.prototype.ngOnInit = function () {
@@ -537,8 +533,7 @@ var PriceComponent = /** @class */ (function () {
         }
         else {
             var newPerson = { firstName: firstName, lastName: lastName, street: street, state: state, city: city, zip: zip, product_id: product_id };
-            this.peopleService
-                .addPerson(newPerson)
+            this.peopleService.addPerson(newPerson)
                 .subscribe(function (person) { return _this.allPeople.push(person); });
         }
     };
@@ -549,10 +544,10 @@ var PriceComponent = /** @class */ (function () {
     };
     PriceComponent.prototype.selectedProduct = function (product) {
         this.product_id = product.id;
-        this.submitted = true;
+        this.submitted = !this.submitted;
     };
     PriceComponent.prototype.show = function () {
-        this.submitted = false;
+        this.submitted = !this.submitted;
     };
     PriceComponent.ctorParameters = function () { return [
         { type: _people_service__WEBPACK_IMPORTED_MODULE_2__["PeopleService"] }

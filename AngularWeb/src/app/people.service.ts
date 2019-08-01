@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { People } from './people';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { catchError, map, tap } from 'rxjs/operators';
 import { Products } from './products';
 
 
@@ -33,7 +32,7 @@ export class PeopleService {
 
   deletePerson(id: number): Observable<{}> {
     const url = `${this.allPeopleUrl}/${id}`;
-    return this.http.delete(url, httpOptions);
+    return this.http.delete<People>(url, httpOptions);
 
   }
 
@@ -56,13 +55,13 @@ export class PeopleService {
   }
 
   //FOR PRODUCTS
-  getPersonWithProduct(id: number) {
+  getPersonWithProduct(id: number): Observable<any[]> {
     const url = `${this.allProductsUrl}/${id}`;
     return this.http.get<any[]>(url);
 
 
   }
-  getAllProducts() {
+  getAllProducts(): Observable<Products[]> {
     return this.http.get<Products[]>(this.allProductsUrl);
 
   }

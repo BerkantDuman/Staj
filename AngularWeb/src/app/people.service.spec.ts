@@ -10,6 +10,7 @@ describe('PeopleService', () => {
 
   let httpClient: HttpClient;
   let httpTestingController: HttpTestingController;
+  let peopleService : PeopleService
   beforeEach(() => {
     /* httpClientSpy = jasmine.createSpyObj('HttpClient', ['get']);
      peopleService = new PeopleService(<any> httpClientSpy);*/
@@ -20,14 +21,18 @@ describe('PeopleService', () => {
 
     httpClient = TestBed.get(HttpClient);
     httpTestingController = TestBed.get(HttpTestingController);
-
+    peopleService = TestBed.get(PeopleService);
   });
 
   //#######################################################################################
-
+  it('should be created', () => {
+    expect(peopleService).toBeTruthy();
+  });
+  
   it('can test http.getAllPeople', () => {
+    
     const testData: People[] = [{ id: 1, firstName: 'A', lastName: 'B', street: 'C', city: 'D', state: 'E', zip: 'F', product_id: 1 }];
-    const peopleService = TestBed.get(PeopleService);
+    
 
     peopleService.getAllPeople()
       .subscribe(data =>
@@ -44,7 +49,7 @@ describe('PeopleService', () => {
 
   it('can test http.getPersonWithData', () => {
     const testData: any[] = [{ id: 1, firstName: 'A', lastName: 'B', street: 'C', city: 'D', state: 'E', zip: 'F', product_id: 1, prices: 100, name: 'G', informations: 'H' }];
-    const peopleService = TestBed.get(PeopleService);
+    
 
     peopleService.getPersonWithProduct(1)
       .subscribe(data =>
@@ -61,7 +66,7 @@ describe('PeopleService', () => {
 
   it('can test http.getPerson', () => {
     const testData: People[] = [{ id: 1, firstName: 'A', lastName: 'B', street: 'C', city: 'D', state: 'E', zip: 'F', product_id: 1 }];
-    const peopleService = TestBed.get(PeopleService);
+    
 
     peopleService.getPerson(1)
       .subscribe(data =>
@@ -80,7 +85,7 @@ describe('PeopleService', () => {
 
     const testData: Products[] =
       [{ id: 1, name: 'Dell', prices: 700, informations: 'PC' }];
-    const peopleService = TestBed.get(PeopleService);
+    
 
     peopleService.getAllProducts()
       .subscribe(data =>
@@ -100,8 +105,8 @@ describe('PeopleService', () => {
 
   it('can test http.Update', () => {
 
-    const updatePerson: People[] = [{ id: 1, firstName: 'A', lastName: 'B', street: 'C', city: 'D', state: 'E', zip: 'F', product_id: 1 }];
-    const peopleService = TestBed.get(PeopleService);
+    const updatePerson: People = { id: 1, firstName: 'A', lastName: 'B', street: 'C', city: 'D', state: 'E', zip: 'F', product_id: 1 };
+    
 
     peopleService.updatePerson(updatePerson, 1).subscribe(
       data => expect(data).toBe(updatePerson, 'should return the people')
@@ -124,10 +129,10 @@ describe('PeopleService', () => {
   it('can test http.addPerson', () => {
 
     const addPerson: People = { id: 1, firstName: 'A', lastName: 'B', street: 'C', city: 'D', state: 'E', zip: 'F', product_id: 1 };
-    const peopleService = TestBed.get(PeopleService);
+    
 
     peopleService.addPerson(addPerson).subscribe(
-      data => expect(data).toBe(addPerson, 'should return the people')
+      data => expect(data.firstName).toBe('A', 'should return the people')
     );
 
     const req = httpTestingController.expectOne('http://localhost:5000/people');
@@ -147,7 +152,7 @@ describe('PeopleService', () => {
   it('can test http.deletePerson', () => {
 
     const testData: People[] = [{ id: 1, firstName: 'A', lastName: 'B', street: 'C', city: 'D', state: 'E', zip: 'F', product_id: 1 }];
-    const peopleService = TestBed.get(PeopleService);
+    
 
     peopleService.deletePerson(1)
       .subscribe(data =>
@@ -161,190 +166,6 @@ describe('PeopleService', () => {
     httpTestingController.verify();
 
   });
-
-
-
-  //getAllPeople
-  /*it('should return expected people (HttpClient called once)', () => {
- 
-     const expectedPeople: People[] =
-       [{ id: 1, firstName: 'A', lastName: 'B', street: 'C', city: 'D', state: 'E', zip: 'F', product_id: 1 }];
-     httpClientSpy.get.and.returnValue(asyncData(expectedPeople));
- 
-     peopleService.getAllPeople().subscribe(
-       peoplees => expect(peoplees).toEqual(expectedPeople, 'expected people'),
-       fail
-     );
-     expect(httpClientSpy.get.calls.count()).toBe(1, 'one call');
-   });
- 
- 
-   //#######################################################################################
- /*
-   //getAllProducts
-   it('should return expected products (HttpClient called once)', () => {
- 
-     const expectedProducts: Products[] =
-       [{ id: 1, name: 'Dell', prices: 700, informations: 'PC' }];
-     
-     httpClientSpy.get.and.returnValue(asyncData(expectedProducts));
- 
-     peopleService.getAllProducts().subscribe(
-       products => expect(products).toEqual(expectedProducts, 'expected products'),
-       fail
-     );
-     expect(httpClientSpy.get.calls.count()).toBe(1, 'one call');
-   });
- 
- 
-   //#######################################################################################
- 
-   
-     //getPersons
-     it('should return expected people (HttpClient called once)', () => {
-       
-       const expectedPeople: People[] =
-         [{ id: 1, firstName: 'A', lastName: 'B', street: 'C', city: 'D', state: 'E', zip: 'F', product_id: 1 },];
-   
-       httpClientSpy.get.and.returnValue(asyncData(expectedPeople));
-   
-       peopleService.getPerson(1).subscribe(
-         people => expect(people).toEqual(expectedPeople, 'expected people'),
-         fail
-       );
-       expect(httpClientSpy.get.calls.count()).toBe(1, 'one call');
-     });
-   
-   
-   //####################  ###################################################################
-   
- 
- 
-   //#######################################################################################
- /*
-   it('should update a hero and return it', () => {
- 
-     const httpTestingController = TestBed.get(HttpTestingController);
- 
-     const updatePerson: People = { id: 1, firstName: 'A', lastName: 'B', street: 'C', city: 'D', state: 'E', zip: 'F', product_id: 1 };
-     const http = TestBed.get(HttpTestingController);  
- 
-     httpClientSpy.get.and.returnValue(asyncData("Updated new person"));
- 
-     peopleService.updatePerson(updatePerson, 1).subscribe(
-       data => expect(data).toEqual(updatePerson, 'should return the hero'),
-       fail
-     );
- 
-     // HeroService should have made one request to PUT hero
-     const req = http.expectOne(peopleService.allPeopleUrl + "/" + 1);
-     expect(req.request.method).toEqual('PUT');
-     expect(req.request.body).toEqual(updatePerson);
- 
-     // Expect server to return the hero after PUT
-     const expectedResponse = new HttpResponse(
-       { status: 200, statusText: 'OK', body: updatePerson });
-     req.event(expectedResponse);
-   });
- /*
-   it('should add a hero ', () => {
-     const httpTestingController = TestBed.get(HttpTestingController);
- 
-     const addPerson: People = { id: 1, firstName: 'A', lastName: 'B', street: 'C', city: 'D', state: 'E', zip: 'F', product_id: 1 };
-     const httpClientSpy = jasmine.createSpyObj('HttpClient', ['get']);
-     const peopleService = TestBed.get(PeopleService);
- 
-     peopleService.addPerson(addPerson).subscribe(
-       data => expect(data).toEqual(addPerson, 'should return the person'),
-       fail
-     );
-     httpClientSpy.get.and.returnValue(asyncData(addPerson));
-     const req = httpTestingController.expectOne(peopleService.allPeopleUrl);
-     expect(req.request.method).toEqual('POST');
-     expect(req.request.body).toEqual(addPerson);
- 
-     const expectedResponse = new HttpResponse(
-       { status: 200, statusText: 'OK', body: addPerson });
-     req.event(expectedResponse);
- 
- 
-   });
- 
-   /*
-   //getAllPeople
-   it('Testing getAllPeople() and expect a list asyncData people', () => {
-     const peopleService = TestBed.get(PeopleService);
-     const http = TestBed.get(HttpTestingController);
-     const expected = [{ id: 1, firstName: 'A', lastName: 'B', street: 'C', city: 'D', state: 'E', zip: 'F', product_id: 1 }];
- 
-     peopleService.getAllPeople().subscribe(actual => {
-       expect(actual).toBe(expected);
-     });
- 
-     http.expectOne('http://localhost:5000/people').flush(expected);
-   });
- 
-   //getPerson
-   it('Testing getPerson() and expect a person from people', () => {
-     const peopleService = TestBed.get(PeopleService);
-     const http = TestBed.get(HttpTestingController);
-     const expected = [{ id: 1, firstName: 'A', lastName: 'B', street: 'C', city: 'D', state: 'E', zip: 'F', product_id: 1 }];
-     const id = expected[0].id;
-     let actual = [];
- 
-     peopleService.getPerson(id).subscribe(actual => {
-       expect(actual).toEqual(expected);
-     });
- 
-     http.expectOne('http://localhost:5000/people/' + id).flush(expected);
-   });
- 
-   //deletePerson()
-   it('Testing deletePerson()', () => {
-     const peopleService = TestBed.get(PeopleService);
-     const http = TestBed.get(HttpTestingController);
-     const deleted = [{ id: 1, firstName: 'A', lastName: 'B', street: 'C', city: 'D', state: 'E', zip: 'F', product_id: 1 }];
- 
-     const expected = 'deleted';
- 
-     peopleService.deletePerson(1).subscribe(actual => {
-       expect(actual).toBe(expected);
-     });
- 
-     http.expectOne('http://localhost:5000/people/1').flush(expected);
-   });
- 
-   //addPerson()
-   it('Testing addPerson()', () => {
-     const peopleService = TestBed.get(PeopleService);
-     const http = TestBed.get(HttpTestingController);
-     const added = { id: 1, firstName: 'A', lastName: 'B', street: 'C', city: 'D', state: 'E', zip: 'F', product_id: 1 };
- 
-     const expected = 'Added new person';
- 
-     peopleService.addPerson(added).subscribe(actual => {
-       expect(actual).toBe(expected);
-     });
-     http.expectOne('http://localhost:5000/people').flush(expected);
-   });
- 
-   //updatePerson
-   it('Testing updatePerson()', () => {
-     const peopleService = TestBed.get(PeopleService);
-     const http = TestBed.get(HttpTestingController);
-     const added = { id: 1, firstName: 'A', lastName: 'B', street: 'C', city: 'D', state: 'E', zip: 'F', product_id: 1 };
- 
-     const expected = 'Updated new person';
-     const id = added.id;
- 
-     peopleService.updatePerson(added, id).subscribe(actual => {
-       expect(actual).toBe(expected);
-     });
- 
-     http.expectOne('http://localhost:5000/people/' + id).flush(expected);
-   });
- */
-
-
-
+    
+  
 });

@@ -12,8 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class DetailComponent implements OnInit {
 
-  person: any [];
-  allPeople: People[];
+  person:  any[]
   submitted = false;
 
 

@@ -88,7 +88,7 @@ app.get('/people/:id', function(request, response) {
 app.delete('/people/:id', function(request, response) {
   conn.query('DELETE  FROM people WHERE id = ?', [request.params.id], (error, rows, fields) => {
     if (!error) {
-      response.send("deleted");
+      response.send(rows);
     } else {
       console.log(error);
     }

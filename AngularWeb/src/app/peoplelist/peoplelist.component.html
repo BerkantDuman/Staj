@@ -3,12 +3,12 @@
 
       <ul class="allPeople">
 
-        <li *ngFor="let person of allPeople">
+        <li *ngFor="let person of allPeople ">
           <a routerLink="/detail/{{person.id}}">
             <span class="badge">{{ person.id }}</span> {{ person.firstName }}
           </a>
-          <button class="delete" title="delete person" (click)="delete(person)" routerLink="/list">x</button>
-          <button routerLink="/detail/{{person.id}}"  class="btn btn-primary">Show details</button>
+          <button class="delete" title="delete person" (click)="deletePerson(person)">x</button>
+          <button routerLink="/detail/{{person.id}}" title="show more details" class="btn btn-primary">Show details</button>
         </li>
 
       </ul>
